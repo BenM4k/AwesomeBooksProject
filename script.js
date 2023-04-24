@@ -33,6 +33,7 @@ addButton.addEventListener('click', (e) => {
 
         books.push(newBook);
         storeForm(books);
+        
         location.reload();
     }
 
