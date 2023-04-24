@@ -49,14 +49,14 @@ let newTitle = document.getElementById('bookTitle');
 let newAuthor = document.getElementById('authorName');
 
 addButton.addEventListener('click', () => {
-    let title = newTitle;
-    let author = newAuthor;
+    let title = newTitle.value;
+    let author = newAuthor.value;
 
     let newBook = {
         title: title,
         author: author,
     };
-
+    console.log(newBook);
     books.push(newBook);
 })
 console.log(books);
