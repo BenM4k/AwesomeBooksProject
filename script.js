@@ -22,7 +22,8 @@ class Books {
 
   deleteBook() {
     const item = this.button.parentNode;
-    item.parentNode.removeChild(item);
+    const parent = item.parentNode;
+    parent.parentNode.removeChild(parent);
 
     const { id } = this.button;
 
@@ -40,12 +41,10 @@ function storeForm(form) {
 
 function displayBooks(book, index) {
   const content = `
-    <div>
-        <p>${book.title}</p>
-        <p>${book.author}</p>    
-        <button id ="delete${index}">Remove</button>
-        <hr>
-    </div>
+    <tr class="tableRow">
+        <td>${book.title} by ${book.author} </td>   
+        <td><button id ="delete${index}">Remove</button></td>
+    </tr>
     `;
   return content;
 }
