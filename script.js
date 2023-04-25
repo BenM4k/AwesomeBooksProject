@@ -1,5 +1,43 @@
 const books = JSON.parse(localStorage.getItem('form')) || [];
 
+class Books {
+  constructor(author, title, books, button) {
+    this.author = author;
+    this.title = title;
+    this.books = books;
+    this.button = button;
+  }
+
+  addBook() {
+    const { title } = this;
+    const { author } = this;
+
+    const newBook = {
+      title,
+      author,
+    };
+
+    this.books.push(newBook);
+  }
+
+  deleteBook() {
+    const item = this.button.parentNode;
+    item.parentNode.removeChild(item);
+
+    const { id } = this.button;
+
+    for (let i = 0; i < this.books.length; i += 1) {
+      if (id.includes(i)) {
+        this.books.splice(i, 1);
+      }
+    }
+  }
+}
+
+function storeForm(form) {
+  localStorage.setItem('form', JSON.stringify(form));
+}
+
 function displayBooks(book, index) {
   const content = `
     <div>
@@ -12,50 +50,31 @@ function displayBooks(book, index) {
   return content;
 }
 
-function storeForm(form) {
-  localStorage.setItem('form', JSON.stringify(form));
-}
-
 const addButton = document.getElementById('addBook');
 const newTitle = document.getElementById('bookTitle');
 const newAuthor = document.getElementById('authorName');
 const container = document.querySelector('.bodyh1');
-
-addButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  if (newAuthor.value !== '' && newTitle.value !== '') {
-    const title = newTitle.value;
-    const author = newAuthor.value;
-    const newBook = {
-      title,
-      author,
-    };
-
-    books.push(newBook);
-    storeForm(books);
-  }
-  this.reset();
-});
 
 for (let i = 0; i < books.length; i += 1) {
   const book = displayBooks(books[i], i);
   container.innerHTML += book;
 }
 
+addButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (newAuthor.value !== '' && newTitle.value !== '') {
+    const library = new Books(newAuthor.value, newTitle.value, books);
+    library.addBook();
+    storeForm(books);
+  }
+  this.reset();
+});
+
 const deleteBtn = document.querySelectorAll('[id^="delete"]');
 deleteBtn.forEach((button) => {
   button.addEventListener('click', () => {
-    const item = button.parentNode;
-    item.parentNode.removeChild(item);
-
-    const { id } = button;
-
-    for (let i = 0; i < books.length; i += 1) {
-      if (id.includes(i)) {
-        books.splice(i, 1);
-      }
-    }
-
+    const libraryOne = new Books(newAuthor.value, newTitle.value, books, button);
+    libraryOne.deleteBook();
     storeForm(books);
   });
 });
