@@ -39,7 +39,7 @@ function storeForm(form) {
   localStorage.setItem('form', JSON.stringify(form));
 }
 
-function returnBooks(book, index) {
+function displayBooks(book, index) {
   const content = `
     <tr class="tableRow">
         <td>"${book.title}" by ${book.author} </td>   
@@ -49,19 +49,15 @@ function returnBooks(book, index) {
   return content;
 }
 
-function displayBooks(book, form){
-  let container = form;
-  let currentBook = "";
-  for (let i = 0; i < book.length; i += 1) {
-    currentBook = returnBooks(book[i], i);
-  }
-  container.innerHTML += currentBook;
-}
-
 const addButton = document.getElementById('addBook');
 const newTitle = document.getElementById('bookTitle');
 const newAuthor = document.getElementById('authorName');
 const container = document.querySelector('.bodyh1');
+
+for (let i = 0; i < books.length; i += 1) {
+  const book = displayBooks(books[i], i);
+  container.innerHTML += book;
+}
 
 addButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -69,12 +65,10 @@ addButton.addEventListener('click', (e) => {
     const library = new Books(newAuthor.value, newTitle.value, books);
     library.addBook();
     storeForm(books);
-    displayBooks(books, container);
+    window.location.reload();
   }
   document.getElementById('addNewForm').reset();
 });
-
-displayBooks(books, container);
 
 const deleteBtn = document.querySelectorAll('[id^="delete"]');
 deleteBtn.forEach((button) => {
