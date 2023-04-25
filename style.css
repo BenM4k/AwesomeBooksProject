@@ -57,16 +57,16 @@
 }
 
 #addNewForm {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: end; */
   margin: 0;
   height: 30px;
 }
 
 #addNewForm input {
   border: 2px solid black;
-  margin-bottom: -12px;
+  margin: 5px 0;
 }
 
 #addNewForm button {
@@ -75,4 +75,9 @@
   box-shadow: 2px 2px black;
   text-decoration: solid;
   text-shadow: 0.5px 0.5px black;
+}
+
+.fBtnCont {
+  display: flex;
+  justify-content: end;
 }
