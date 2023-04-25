@@ -42,7 +42,7 @@ function storeForm(form) {
 function displayBooks(book, index) {
   const content = `
     <tr class="tableRow">
-        <td>${book.title} by ${book.author} </td>   
+        <td>"${book.title}" by ${book.author} </td>   
         <td><button id ="delete${index}">Remove</button></td>
     </tr>
     `;
