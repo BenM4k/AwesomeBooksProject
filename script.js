@@ -78,3 +78,29 @@ deleteBtn.forEach((button) => {
     storeForm(books);
   });
 });
+
+//SPA
+
+const navHome = document.querySelector('.nav-home');
+const navBooks = document.querySelector('.nav-books');
+const navContact = document.querySelector('.nav-contact');
+
+const homeSection = document.querySelector('.home');
+const bookSection = document.querySelector('.books');
+const contactSection = document.querySelector('.contacts');
+
+navHome.addEventListener('click', ()=> {
+    homeSection.style.display = 'flex';
+    bookSection.style.display = 'none';
+    contactSection.style.display = 'none';
+})
+navBooks.addEventListener('click', ()=> {
+    homeSection.style.display = 'none';
+    bookSection.style.display = 'flex';
+    contactSection.style.display = 'none';
+})
+navContact.addEventListener('click', ()=> {
+    homeSection.style.display = 'none';
+    bookSection.style.display = 'none';
+    contactSection.style.display = 'flex';
+})

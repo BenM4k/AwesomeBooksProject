@@ -2,6 +2,75 @@
   box-sizing: border-box;
 }
 
+header {
+  height: 70px;
+}
+
+header nav {
+  margin: 5px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+header nav h2 {
+  width: 30%;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+header nav ul {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header nav ul li {
+  list-style-type: none;
+  cursor: pointer;
+  border-right: 1px black solid;
+  padding-right: 5px;
+}
+
+header nav ul li:last-child {
+  border-right: none;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.books {
+  display: none;
+  flex-direction: column;
+}
+
+.contacts {
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts p {
+  font-size: 15px;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+.contacts ul {
+  margin-top: 20px;
+}
+.title {
+  font-size: 36px;
+}
+
 .minDiv {
   display: flex;
   flex-direction: column;
@@ -82,4 +151,16 @@
 .fBtnCont {
   display: flex;
   justify-content: end;
+}
+
+footer {
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+footer h2 {
+  font-size: 18px;
+  margin-left: 20px; 
 }
