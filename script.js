@@ -104,3 +104,7 @@ navContact.addEventListener('click', ()=> {
     bookSection.style.display = 'none';
     contactSection.style.display = 'flex';
 })
+let parent = document.getElementsByTagName('header');
+let timeSlot = document.getElementById('time');
+timeSlot.innerHTML = Date();
+parent.appendChield('timeSlot');
