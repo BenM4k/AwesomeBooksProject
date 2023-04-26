@@ -56,11 +56,11 @@ This project is a website for book storage. The website features a modern and so
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://benm4k.github.io/AwesomeBooksProject/)
+- [Live Demo Link](https://benm4k.github.io/AwesomeBooksProject/) -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 <!-- GETTING STARTED -->
