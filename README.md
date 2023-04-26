@@ -58,7 +58,7 @@ This project is a website for book storage. The website features a modern and so
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://benm4k.github.io/First_Capstone_Project/)
+- [Live Demo Link](https://benm4k.github.io/AwesomeBooksProject/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
