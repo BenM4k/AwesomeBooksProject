@@ -161,7 +161,7 @@ If you like this project, U can reach me on my Twitter handle for any collaborat
 
 I would like to thank Microverse and all My Micronauts partners for their help on this project. 
 
-I would like to thank Cindy Shin, the author of this design.
+I would like to thank My coding partner Nahid Raihan Sardar for his work, professionalism and skills showcase.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
