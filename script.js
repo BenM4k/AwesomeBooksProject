@@ -78,3 +78,47 @@ deleteBtn.forEach((button) => {
     storeForm(books);
   });
 });
+
+// SPA
+
+const navHome = document.querySelector('.nav-home');
+const navBooks = document.querySelector('.nav-books');
+const navContact = document.querySelector('.nav-contact');
+
+const homeSection = document.querySelector('.home');
+const bookSection = document.querySelector('.books');
+const contactSection = document.querySelector('.contacts');
+
+navHome.addEventListener('click', () => {
+  navHome.style.color = 'blue';
+  navBooks.style.color = 'black';
+  navContact.style.color = 'black';
+  homeSection.style.display = 'flex';
+  bookSection.style.display = 'none';
+  contactSection.style.display = 'none';
+});
+navBooks.addEventListener('click', () => {
+  navHome.style.color = 'black';
+  navBooks.style.color = 'blue';
+  navContact.style.color = 'black';
+  homeSection.style.display = 'none';
+  bookSection.style.display = 'flex';
+  contactSection.style.display = 'none';
+});
+navContact.addEventListener('click', () => {
+  navHome.style.color = 'black';
+  navBooks.style.color = 'black';
+  navContact.style.color = 'blue';
+  homeSection.style.display = 'none';
+  bookSection.style.display = 'none';
+  contactSection.style.display = 'flex';
+});
+
+const timeSlot = document.getElementById('time');
+
+const today = new Date();
+const date = `${today.toLocaleString('default', { month: 'long' })} ${today.getDate()} ${today.getFullYear()}`;
+const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+const dateTime = `${date} ${time}`;
+
+timeSlot.innerHTML = dateTime;
